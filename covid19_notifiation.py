@@ -5,7 +5,7 @@
 # certifi==2020.4.5.2
 # chardet==3.0.4
 # idna==2.9
-# plyer==1.4.3
+# plyer==1.4.3 ### for WINDOWS SYSTEMS not required for Linux
 # requests==2.23.0
 # ruamel.yaml==0.16.10
 # ruamel.yaml.clib==0.2.0
@@ -21,7 +21,7 @@ from gi.repository import Notify, GdkPixbuf
 import requests #for HTML parsing from government websites or any websites
 from bs4 import BeautifulSoup # Web Scrapper
 
-def notifyMe(title, Message):
+def notifyMe(title, Message): # Use plyer for windows the same way, we use "gi in linux". A little bit of 
     Notify.init("Corona")
     notification = Notify.Notification.new(title,Message)
     
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     myDataStr = myDataStr[1:]
     itemList = myDataStr.split('\n\n')
 
-    selStates = ['Odisha','Karnataka','Delhi'] # add or remove the states that you wish to see the notification.
+    selStates = ['Odisha'] # add or remove the states that you wish to see the notification.
     allStates = [] # this variable has all the data for all the states.
     for item in itemList[0:35]:
         dataList = item.split('\n')
